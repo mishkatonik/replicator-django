@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title|safe }}</title> <!-- {% block title %}{% endblock %} -->
+        <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Turret+Road|Major+Mono+Display|Lato|Montserrat|Roboto+Mono&display=swap" rel="stylesheet">
+        <link href="./static/css/styles.css" rel="stylesheet">
+    </head>
+
+
+    <body>
+        <div class="container">
+            <div class="row">
+                
+
+                <!-- left side main section -->
+                <div class="col-md-9">
+                    <!-- site header -->
+                    <div class="site-header">
+                            <h1 class="site-header"><strong>Welcome to the Replicator</strong></h1>
+                    </div>
+
+<!----------------- CONTENT STARTS HERE ----------------->
+                    <!-- {% block content %}
+                    {% endblock content %} -->
+                    {{ content|safe }}
+<!------------------ CONTENT ENDS HERE ------------------>
+
+                </div>
+         <!-- right sidebar-->
+                <div class="col-md-3" align="center">
+                    <div class="nav-sidebar">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img class="img-fluid rounded-circle logo" src="./static/images/Chef-Neelix-Head.png">
+                                <h6 class="tagline"><strong><em>Serving up eats from around the multiverse!</em></strong></h6>
+                                <br/>
+                                    <div class="container">                     
+                                        {% for page in pages %}
+                                            {% if page.title == title %}
+                                                <a href="{{ page.basename }}"><button type="button" class="btn btn-primary btn-lg active"> {{ page.title }} </button></a><br/><br/>
+                                            {% else %}
+                                                <a href="{{ page.basename }}"><button type="button" class="btn btn-primary btn-lg"> {{ page.title }} </button></a><br/><br/>
+                                            {% endif %}
+                                        {% endfor %}
+                                    
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>
