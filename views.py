@@ -62,3 +62,13 @@ def meet_the_chef(request):
         'content': chef_content,
     }
     return render(request, 'base.html', context)
+
+# MailGun example email -----------------------------------------------------------------
+def send_message():
+    return requests.post(
+        "https://api.mailgun.net/v3/sandboxff6f95855b4243fea79d198ec524098d.mailgun.org/messages",
+        auth=("api", "010b9271dac02ac74fec58f880dca8c5-09001d55-e01ed707"),
+        data={"from": "Mailgun Sandbox <postmaster@sandboxff6f95855b4243fea79d198ec524098d.mailgun.org>",
+            "to": "Mish Mercer <mishell.mercer@gmail.com>",
+            "subject": "Hello Mish Mercer",
+            "text": "Congratulations Mish Mercer, you just sent an email with Mailgun!  You are truly awesome!"})
