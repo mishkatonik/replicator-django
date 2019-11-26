@@ -8,6 +8,7 @@ urlpatterns = [
     path('the-replicator', views.replicator),
     path('about', views.about),
     path('meet-the-chef', views.meet_the_chef),
+    path('contact', views.contact),
 ]
 
 # Boilerplate to include static files
