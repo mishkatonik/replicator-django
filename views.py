@@ -1,7 +1,8 @@
 import requests
 import json
+import os
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def replicator(request):
     context = {
@@ -27,21 +28,27 @@ def contact(request):
     context = {
         'active_link' : 'contact/',
     }
+    if request.POST:
+        send_email(request)
     return render(request, 'contact.html', context)
 
-# MailGun example email method -----------------------------------------------------------------
-def send_message(name, email, message):
+# MailGun setup -------------------------
+mailgun_api_key = os.environ["MAILGUN_API_KEY"]
+# locate file or use heroku config to get API key then use the following bash command for each new terminal:
+#     export MAILGUN_API_KEY="XXXXXXXXXXXXXXXXXXXXXX"
+
+def mailgun(name, email, message):
     return requests.post(
         "https://api.mailgun.net/v3/sandboxff6f95855b4243fea79d198ec524098d.mailgun.org/messages",
-        auth=("api", "010b9271dac02ac74fec58f880dca8c5-09001d55-e01ed707"),
-        data={"from": (name, email),
+        auth=("api", mailgun_api_key),
+        data={"from": (name, '<', email, '>'),
             "to": "Mish Mercer <mishell.mercer@gmail.com>",
-            "subject": "Hello from" + name,
+            "subject": "Hello from " + name,
             "text": message})
 
 def send_email(request):
     name = request.POST["name"]
     email = request.POST["email"]
     message = request.POST["message"]
-    send_message(name, email, message)
+    mailgun(name, email, message)
     redirect('/')

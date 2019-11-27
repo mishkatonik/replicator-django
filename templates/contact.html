@@ -4,13 +4,15 @@
 {% block content %}
     <div class="contact-form">
         <div class="row">
-            <div class="col-md">
+            <div class="col-lg">
                 <h2>Contact Me</h2>
-                <form action="/meet-the-chef" method="POST">
-                    <input name="name" placeholder="Name" />
-                    <input name="email" type="email" placeholder="Email" />
-                    <textarea name="message..."> </textarea>
-                    <button type="submit">Submit</button>
+                <p>Wanna get in touch? Enter your info to send me a message!</p>
+                <form action="/contact/" method="POST"> {% csrf_token %}
+                    <input name="name" placeholder="Name..." /><br/><br/>
+                    <input name="email" type="email" placeholder="Email..." /><br/><br/>
+                    <p>Message:</p>
+                    <textarea name="message"> </textarea><br/><br/>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </form>
             </div>
         </div>

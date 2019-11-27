@@ -46,7 +46,7 @@ button.btn.btn-primary.btn-lg {
 	background-color: #540B0E;
 	border: solid  #FCBF49;
 	color:  white;
-	border-radius: 20px;
+	border-radius: 10px;
 }
 
 button.btn.btn-primary.btn-lg:hover {
@@ -63,7 +63,7 @@ div.recipe-card {
 	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, #003049 46%);
 	padding: 30px;
 	border: solid #000033;
-	border-radius: 20px;
+	border-radius: 10px;
 }
 
 img.recipe-img {
@@ -106,7 +106,7 @@ div.chef-info {
 	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, #CC9139 46%);
 	padding: 30px;
 	border: solid #000033;
-	border-radius: 20px;
+	border-radius: 10px;
 }
 
 img.me {
@@ -120,5 +120,18 @@ div.contact-form {
 	background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);;
 	padding: 30px;
 	border: solid #000033;
-	border-radius: 20px;
+	border-radius: 10px;
+}
+
+/*styling for for input fields not working?*/
+input {
+	width: 60%;
+	border: solid #000033;
+	border-radius: 10px;
+}
+
+textarea {
+	width: 100%;
+	border: solid #000033;
+	border-radius: 10px;
 }
