@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-<!-- {% block title %}Welcome to the Replicator{% endblock title %} -->
+{% block title %}Welcome to the Replicator{% endblock title %}
 
-    				<!-- {% block content|safe %} -->
+    				{% block content %}
     				<!-- recipe/blog  entries -->
     				<div class="recipes">
     				  	<h2 class="recipe-title">What's Cookin'?</h2>
@@ -10,7 +10,7 @@
 	    				<div class="recipe-card">
 	    					<div class="row">
 		    					<div class="col-md-3">
-		    						<img class="img-fluid recipe-img" src="./static/images/plomeek-soup.jpg"/>
+		    						<img class="img-fluid recipe-img" src="/static/images/plomeek-soup.jpg"/>
 		    					</div>
 		    					<div class="col-md-9">
 		    						<div class="row">
@@ -37,7 +37,7 @@
 	    				<div class="recipe-card">
 	    					<div class="row">
 		    					<div class="col-md-3">
-		    						<img class="img-fluid recipe-img" src="./static/images/gagh-worm.jpg"/>
+		    						<img class="img-fluid recipe-img" src="/static/images/gagh-worm.jpg"/>
 		    					</div>
 		    					<div class="col-md-9">
 		    						<div class="row">
@@ -59,4 +59,4 @@
 		    				</div>
 		    			</div>
 		    		</div>
-		    		<!-- {% endblock content %} -->
+		    		{% endblock content %}
